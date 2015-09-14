@@ -64,9 +64,6 @@ echo "rsyncing mappings ..." >> $LOGFILE
 # Don't delete "extraneous" files in the destination directory, unlike the
 # other two rsync calls
 /usr/bin/rsync -rptolg --checksum --delay-updates \
-    --exclude 'README.md' \
-    --exclude 'LICENSE' \
-    --exclude '.git*' \
     /home/dpla/heidrun-mappings/heidrun /opt/heidrun/vendor/mappings
 if [ $? -ne 0 ]; then
     exit 1
