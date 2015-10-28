@@ -19,8 +19,9 @@ rbenv shell $USE_VERSION >> $LOGFILE 2>&1
 echo "installing bundle ..." >> $LOGFILE
 
 rm -f Gemfile.lock
-bundle install >> $LOGFILE 2>&1
-bundle update dpla_frontend_assets >> $LOGFILE 2>&1
+bundle install --deployment --without dpla_branding production >> $LOGFILE 2>&1
+# bundle install >> $LOGFILE 2>&1
+# bundle update dpla_frontend_assets >> $LOGFILE 2>&1
 rbenv rehash
 
 echo "precompiling assets ..." >> $LOGFILE
