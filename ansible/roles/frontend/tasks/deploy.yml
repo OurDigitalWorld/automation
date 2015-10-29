@@ -81,8 +81,9 @@
     - sock
 
 - name: Build frontend app
-  script: >
+  script: >-
       build_frontend.sh {{ frontend_rbenv_version }}
+      {{ frontend_include_branding or 'nobranding' }}
   sudo_user: dpla
   notify: restart memcached
 
